@@ -21,6 +21,6 @@ public class VotingCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     Long idElection;
-    @ElementCollection
-    List<Long> electionList;
+    @OneToMany
+    List<VotingList> electionList;
 }

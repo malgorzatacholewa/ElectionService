@@ -22,6 +22,6 @@ public class VotingList {
     Long id;
     Long numberOfParty;
     @ElementCollection
-    List<Integer> listOfCandidateId;
+    List<Long> listOfCandidateId;
 
 }

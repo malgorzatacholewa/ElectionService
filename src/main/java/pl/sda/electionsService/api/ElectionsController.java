@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import pl.sda.electionsService.domein.voting.VotingCard;
+import pl.sda.electionsService.domein.voting.VotingCardDto;
 import pl.sda.electionsService.domein.voting.VotingFacade;
 import pl.sda.electionsService.domein.voting.VotingResponse;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -20,8 +23,8 @@ public class ElectionsController {
     ResponseEntity<VotingResponse> getVotingList (@PathVariable Long idElections) {
         VotingResponse response = new VotingResponse();
         try {
-            VotingCard votingCard = facade.getVotingList(idElections);
-            response.setVotingCard(votingCard);
+            List<VotingCardDto> votingList = facade.getVotingList(idElections);
+            response.setVotingCard(votingList);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
             response.setErrorMessage(e.getMessage());
