@@ -21,7 +21,6 @@ public class VotingList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     Long numberOfParty;
-
     @ElementCollection
     List<Integer> listOfCandidateId;
 

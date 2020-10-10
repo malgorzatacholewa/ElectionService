@@ -22,5 +22,5 @@ public class VotingCard {
     Long id;
     Long idElection;
     @ElementCollection
-    List<Long> partyList;
+    List<Long> electionList;
 }
