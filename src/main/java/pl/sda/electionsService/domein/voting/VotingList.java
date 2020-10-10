@@ -6,17 +6,23 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Component
+@Entity
+@Table (name = "votingList")
 public class VotingList {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     Long numberOfParty;
+
+    @ElementCollection
     List<Integer> listOfCandidateId;
 
 }

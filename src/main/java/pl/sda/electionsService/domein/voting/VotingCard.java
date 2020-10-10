@@ -13,14 +13,14 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-//@Entity
-//@Table (name = "VotingCard")
-@Component
+@Entity
+@Table (name = "VotingCard")
 public class VotingCard {
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     Long idElection;
-    List<VotingList> list;
+    @ElementCollection
+    List<Long> list;
 }
